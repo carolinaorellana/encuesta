@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Resultado Dojo</title>
+</head>
+<body>
+    <div class="card container col-4 bg-secondary my-4">
+        <h1 class="text-center text-info my-4">Resultado Dojo</h1>
+        <!--Tabla con la terales probando-->
+        <table class="table table-info table-striped">
+            <tr>
+                <th>Nombre</th>
+                <td>{{encuestado.nombre}}</td>
+            </tr>
+            <tr>
+                <th>Apellido</th>
+                <td>{{encuestado.apellido}}</td>
+            </tr>
+            <tr>
+                <th>Lenguaje</th>
+                <td>{{encuestado.lenguaje}}</td>
+            </tr>
+            <tr>
+                <th>Ubicación</th>
+                <td>{{encuestado.ubicacion}}</td>
+            </tr>
+            <tr>
+                <th>Comentario</th>
+                <td>{{encuestado.comentario}}</td>
+            </tr>
+            <tr>
+                <th>Genero</th>
+                <td>{{encuestado.genero}}</td>
+            </tr>
+            <tr>
+                <th>Acepta términos y condiciones</th>
+                <td>{% if encuestado.terminos == 'on': %}
+                        Sí
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+        <form action="/volver" method="post">
+            <div class=" mb-3 text-end">
+                <button type="submit" class="btn bg-info text-dark fw-bold fs-5">Volver</button>
+            </div>
+            
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
